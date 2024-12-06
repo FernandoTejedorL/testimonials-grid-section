@@ -1,14 +1,18 @@
-import Button from './components/button/Button';
+import { TESTIMONIALS_INFO } from './constants/testimonials-info';
+import Main from './components/main/Main';
+import Testimonial from './components/testimonial/Testimonial';
 import { GlobalStyles } from './styles/GlobalStyles';
 
 const App = () => {
 	return (
-		<div>
+		<>
 			<GlobalStyles />
-			<h1>Curso de React</h1>
-			<Button color='steelblue'>Click Me!</Button>
-			<Button color='#f0f'>Click Me!</Button>
-		</div>
+			<Main>
+				{TESTIMONIALS_INFO.map(testimonial => (
+					<Testimonial key={testimonial.id} {...testimonial} />
+				))}
+			</Main>
+		</>
 	);
 };
 
